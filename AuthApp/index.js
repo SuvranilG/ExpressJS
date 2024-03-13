@@ -8,7 +8,8 @@ const PORT = process.env.PORT || 4000;
 
 app.use(express.json()); //Same as body parser
 
-require("./config/database").connect();
+const dbConnect=require("./config/database");
+dbConnect.connect();
 
 //route import and mount
 const user = require("./routes/user");
